@@ -11,7 +11,7 @@ const Main = styled.div`
   overflow:auto;
 `;
 type Props = {
-    children: any
+    children: any;
 };
 const Layout = (props: Props) => {
     return (
