@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Icon from './Icon';
 
 
@@ -12,35 +12,44 @@ const NavWrapper = styled.div`
     > li {
       width:33.333%;
       text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:4px 0;
-      .icon {
+      > a {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding:4px 0;
+        .icon {
           width:24px;
           height:24px;
+        }
       }
+      
     }
   }
 `;
 const Nav = () => {
-    return (
-        <NavWrapper>
-            <ul>
-                <li>
-                    <Icon name="tag"/>
-                    <Link to="/tags">标签页</Link>
-                </li>
-                <li>
-                    <Icon name="money" />
-                    <Link to="/money">记账页</Link>
-                </li>
-                <li>
-                    <Icon name="chart" />
-                    <Link to="/Statistics">统计页</Link>
-                </li>
-            </ul>
-        </NavWrapper>
-    );
+  return (
+    <NavWrapper>
+      <ul>
+        <li>
+          <Link to="/tags">
+            <Icon name="tag" />
+            标签页
+          </Link>
+        </li>
+        <li>
+          <Link to="/money">
+            <Icon name="money" />
+            记账页
+          </Link>
+        </li>
+        <li>
+          <Link to="/Statistics">
+            <Icon name="chart" />
+            统计页
+          </Link>
+        </li>
+      </ul>
+    </NavWrapper>
+  );
 };
 export default Nav;

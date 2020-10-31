@@ -9,8 +9,7 @@ import {
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-
+} from 'react-router-dom';
 
 
 function App() {
@@ -34,10 +33,6 @@ function App() {
     </Router>
   );
 }
-
-
-
-
 
 
 export default App;
