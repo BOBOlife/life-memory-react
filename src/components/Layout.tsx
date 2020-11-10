@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 import styled from 'styled-components';
+
 const Wrapper = styled.div`
   min-height:100vh;
   display:flex;
@@ -11,17 +12,17 @@ const Main = styled.div`
   overflow:auto;
 `;
 type Props = {
-    children: any;
+  children: any;
 };
 const Layout = (props: Props) => {
-    return (
-        <Wrapper>
-            <Main>
-                {props.children}
-            </Main>
-            <Nav />
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Main>
+        {props.children}
+      </Main>
+      <Nav />
+    </Wrapper>
+  );
 };
 
 export default Layout;
