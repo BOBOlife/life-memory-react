@@ -25,7 +25,7 @@ const NavWrapper = styled.div`
           fill:#666
         }
         &.selected{
-          background: #F4CA75;
+          background: #A9A9A9;
           color:#040202;
           .icon {
             fill:#040202;
