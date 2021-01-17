@@ -16,20 +16,19 @@ type Category = '-' | '+'
 
 function Money() {
   const [selected, setSelected] = useState({
-    tags: [] as string[],
-    note: '',
-    category: '-' as Category,
-    amount: 0
+    tags: [] as string[], note: '', category: '-' as Category, amount: 0
   });
+
+  type Selected = typeof selected
+  const onChange = (obj: Partial<Selected>) => {//部分类型，可以传部分值
+    setSelected({...selected, ...obj});
+  };
   return (
     <MyLayout>
-      <TagsSection value={selected.tags} onChange={(tags) => setSelected({...selected, tags: tags})} />
-      <NoteSection value={selected.note} onChange={(note) => {setSelected({...selected, note: note});}} />
-      <CategorySection value={selected.category}
-                       onChange={(category) => {setSelected({...selected, category: category});}} />
-      <NumberPadSection value={selected.amount}
-                        onChange={(amount) => {setSelected({...selected, amount: amount});}}
-                        onOk={() => {}} />
+      <TagsSection value={selected.tags} onChange={(tags) => onChange({tags})} />
+      <NoteSection value={selected.note} onChange={(note) => onChange({note})} />
+      <CategorySection value={selected.category} onChange={(category) => onChange({category})} />
+      <NumberPadSection value={selected.amount} onChange={(amount) => onChange({amount})} onOk={() => {}} />
     </MyLayout>
   );
 }
