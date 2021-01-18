@@ -7,14 +7,14 @@ try {importAll(require.context('icons', true, /\.svg$/));} catch (error) {consol
 
 
 type Props = {
-    name: string;
+  name: string;
 };
-const Icon = (props: Props) => {
-    return (
-        <svg className="icon">
-            <use xlinkHref={'#' + props.name}></use>
-        </svg>
-    );
+const Icon: React.FC<Props> = (props: Props) => {
+  return (
+    <svg className="icon">
+      <use xlinkHref={'#' + props.name} />
+    </svg>
+  );
 };
 
 export default Icon;
