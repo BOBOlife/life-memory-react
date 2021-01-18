@@ -11,6 +11,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import styled from 'styled-components';
+import {Tag} from 'views/Tag';
 
 const AppWrapper = styled.div`
   color: #333;
@@ -21,8 +22,11 @@ function App() {
     <AppWrapper>
       <Router>
         <Switch>
-          <Route path="/tags">
+          <Route path="/tags" exact={true}>
             <Tags />
+          </Route>
+          <Route path="/tags/:tag" exact={true}>
+            <Tag />
           </Route>
           <Route path="/money">
             <Money />
