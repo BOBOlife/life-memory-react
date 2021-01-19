@@ -20,19 +20,11 @@ const useTags = () => { // 封装自定义 Hook
     }
     return result;
   };
-  const updateTag = (id: number, obj: { name: string }) => {
-    const index = findTagIndex(id);
-    // deep clone tags => tagsClone
-    const tagsClone = JSON.parse(JSON.stringify(tags));
-    // index of tagsClone instead of {id:id,name:obj.name}
-    tagsClone.splice(index, 1, {id, name: obj.name});
-    setTags(tagsClone);
+  const updateTag = (id: number, {name}: { name: string }) => {
+    setTags(tags.map(tag => tag.id === id ? {id, name} : tag));
   };
   const deleteTag = (id: number) => {
-    const index = findTagIndex(id);
-    const tagsClone = JSON.parse(JSON.stringify(tags));
-    tagsClone.splice(index, 1);
-    setTags(tagsClone);
+    setTags(tags.filter(tag => tag.id !== id)); // filter Api will return new Array
   };
   return {
     tags,
