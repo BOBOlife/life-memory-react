@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import * as React from 'react';
-import {ChangeEventHandler, useRef} from 'react';
-import {Input} from '../../components/Input';
+import {ChangeEventHandler} from 'react';
+import {Input} from 'components/Input';
+import React from 'react';
 
 const Wrapper = styled.section`
   background: #f5f5f5;
@@ -16,11 +16,8 @@ type Props = {
 
 const NoteSection: React.FC<Props> = (props) => {
   const note = props.value;
-  const refInput = useRef<HTMLInputElement>(null);
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    if (refInput.current !== null) {
-      props.onChange(e.target.value);
-    }
+    props.onChange(e.target.value);
   };
   return (
     <Wrapper>

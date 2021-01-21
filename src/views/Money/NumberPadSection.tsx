@@ -13,7 +13,7 @@ const NumberPadSection: React.FC<Props> = (props) => {
   // const output = props.value.toString();
   const [output, _setOutput] = useState(props.value.toString());
   const setOutput = (output: string) => {
-    let newOutput;
+    let newOutput: string;
     if (output.length > 16) {
       newOutput = output.slice(0, 16);
     } else if (output.length === 0) {

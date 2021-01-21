@@ -18,7 +18,7 @@ const useTags = () => { // 封装自定义 Hook
   }, []); // 组件挂载时执行
   useUpdate(() => {
     window.localStorage.setItem('tags', JSON.stringify(tags));
-  }, [tags]);
+  }, tags);
   const findTag = (id: number) => tags.filter(tag => tag.id === id)[0];
   const findTagIndex = (id: number) => {
     let result = -1;
@@ -43,8 +43,13 @@ const useTags = () => { // 封装自定义 Hook
       setTags([...tags, {id: createId(), name: tagName}]);
     }
   };
+  const getName = (id: number) => {
+    const tag = tags.filter(t => t.id === id)[0];
+    return tag ? tag.name : '';
+  };
   return {
     tags,
+    getName,
     setTags,
     findTag,
     updateTag,
