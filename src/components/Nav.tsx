@@ -16,6 +16,7 @@ const NavWrapper = styled.div`
       > a {
         display:flex;
         flex-direction:column;
+        justify-content: center;
         align-items:center;
         padding:4px 0;
         color: #666;
