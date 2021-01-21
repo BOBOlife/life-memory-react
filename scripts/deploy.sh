@@ -7,5 +7,5 @@ git add .
 git commit -m "deploy" &&
 git remote add origin git@github.com:BOBOlife/packetlife-react_webmsite.git &&
 git branch -M main
-git push -u origin Main -f
+git push -u origin main -f
 cd -
