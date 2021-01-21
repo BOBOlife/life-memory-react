@@ -1,6 +1,7 @@
 {
   "name": "life-money-react",
   "version": "0.1.0",
+  "homepage": "https://bobolife.xyz/packetlife-react_website",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
